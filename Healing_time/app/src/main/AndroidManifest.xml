@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.Healing_time">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true">
+        <activity android:name="com.example.Healing_time.hospitalInformationEditActivity"></activity>
+        <activity android:name="com.example.Healing_time.DropUserActivity" />
+        <activity android:name=".DeleteUserActivity" />
+        <activity android:name="com.example.Healing_time.ReserveLookupActivity" />
+        <activity android:name="com.example.Healing_time.MyPageEditActivity" />
+        <activity android:name="com.example.Healing_time.ReserveCompleteActivity" />
+        <activity android:name="com.example.Healing_time.FindPwActivity" />
+        <activity android:name="com.example.Healing_time.FindIdActivity" />
+        <activity android:name="com.example.Healing_time.HospitalListActivity" />
+        <activity android:name="com.example.Healing_time.MyPageHostActivity" />
+        <activity android:name="com.example.Healing_time.MyPageUserActivity" />
+        <activity android:name="com.example.Healing_time.HospitalUploadActivity" />
+        <activity android:name="com.example.Healing_time.HospitalInformationHostActivity" />
+        <activity android:name="com.example.Healing_time.HospitalInformationUserActivity" />
+        <activity android:name="com.example.Healing_time.ReserveHospitalActivity" />
+        <activity android:name="com.example.Healing_time.SearchActivity" />
+        <activity android:name="com.example.Healing_time.JoinActivity" />
+        <activity android:name="com.example.Healing_time.LoginActivity" />
+        <activity android:name="com.example.Healing_time.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
