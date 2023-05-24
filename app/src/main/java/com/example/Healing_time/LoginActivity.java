@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuInflater;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -64,16 +65,40 @@ public class LoginActivity extends AppCompatActivity {
                         //String UserId = jsonObject.getString( "UserId" );
 
                         Toast.makeText( getApplicationContext(), String.format("%s님 환영합니다.", userData.UserName), Toast.LENGTH_SHORT ).show();
-                        Intent intent = new Intent( LoginActivity.this, HospitalListActivity.class );
-                        intent.putExtra( "UserId", userData.getUserId());
-                        intent.putExtra( "UserPwd", userData.getUserPassword());
-                        intent.putExtra( "UserNum", userData.getUserNum());
-                        intent.putExtra( "UserName", userData.getUserName());
-                        intent.putExtra( "UserEmail", userData.getUserEmail());
-                        intent.putExtra( "UserPhoneNum", userData.getUserPhoneNum());
-                        intent.putExtra( "Host", userData.getHost());
+                        if(userData.getHost().equals("2")) {
+                            Intent intent = new Intent( LoginActivity.this, UserActivity.class );
+                            intent.putExtra( "UserId", userData.getUserId());
+                            intent.putExtra( "UserPwd", userData.getUserPassword());
+                            intent.putExtra( "UserNum", userData.getUserNum());
+                            intent.putExtra( "UserName", userData.getUserName());
+                            intent.putExtra( "UserEmail", userData.getUserEmail());
+                            intent.putExtra( "UserPhoneNum", userData.getUserPhoneNum());
+                            intent.putExtra( "Host", userData.getHost());
 
-                        startActivity( intent );
+                            startActivity( intent );
+                        }
+                        else if(userData.getHost().equals("1")){
+                            Intent intent = new Intent( LoginActivity.this, HostActivity.class );
+                            intent.putExtra( "UserId", userData.getUserId());
+                            intent.putExtra( "UserPwd", userData.getUserPassword());
+                            intent.putExtra( "UserNum", userData.getUserNum());
+                            intent.putExtra( "UserName", userData.getUserName());
+                            intent.putExtra( "UserEmail", userData.getUserEmail());
+                            intent.putExtra( "UserPhoneNum", userData.getUserPhoneNum());
+                            intent.putExtra( "Host", userData.getHost());
+
+                            startActivity( intent );
+                        }
+//                        Intent intent = new Intent( LoginActivity.this, MainActivity.class );
+//                        intent.putExtra( "UserId", userData.getUserId());
+//                        intent.putExtra( "UserPwd", userData.getUserPassword());
+//                        intent.putExtra( "UserNum", userData.getUserNum());
+//                        intent.putExtra( "UserName", userData.getUserName());
+//                        intent.putExtra( "UserEmail", userData.getUserEmail());
+//                        intent.putExtra( "UserPhoneNum", userData.getUserPhoneNum());
+//                        intent.putExtra( "Host", userData.getHost());
+//
+//                        startActivity( intent );
 
                     } else {//로그인 실패시
                         Toast.makeText( getApplicationContext(), "로그인에 실패하셨습니다.", Toast.LENGTH_SHORT ).show();

@@ -14,7 +14,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
+public class UserActivity extends AppCompatActivity {
 
     ViewPager viewPager;
     ImageView imageView;
@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_user);
 
         ActionBar ab = getSupportActionBar();
         //ab.setTitle("ActionBar Title by setTitle()");
@@ -49,23 +49,50 @@ public class MainActivity extends AppCompatActivity {
         Test = userData.getHost();
         System.out.println(Test);
 
-        Button login = findViewById(R.id.btn_login);
-        Button signin = findViewById(R.id.btn_signin);
+        Button mypage = findViewById(R.id.btn_myPage);
+        Button logout = findViewById(R.id.btn_logout);
+        Button search = findViewById(R.id.btn_search);
 
-        login.setOnClickListener(new View.OnClickListener() {
+
+        mypage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getApplicationContext(), "login button click", Toast.LENGTH_SHORT).show();
-                Intent loginIntent = new Intent(getApplicationContext(), LoginActivity.class);
-                startActivity(loginIntent);
+                Toast.makeText(getApplicationContext(), "myPage button click", Toast.LENGTH_SHORT).show();
+                Intent myMenuIntent = new Intent(getApplicationContext(), MyPageUserActivity.class);
+                //Intent intent = getIntent();
+                //String UserNum = intent.getExtras().getString("UserNum");
+                myMenuIntent.putExtra( "UserId", userData.getUserId());
+                myMenuIntent.putExtra( "UserPwd", userData.getUserPassword());
+                myMenuIntent.putExtra( "UserName", userData.getUserName());
+                myMenuIntent.putExtra( "UserNum", userData.getUserNum());
+                myMenuIntent.putExtra( "UserEmail", userData.getUserEmail());
+                myMenuIntent.putExtra( "UserPhoneNum", userData.getUserPhoneNum());
+                myMenuIntent.putExtra( "Host", userData.getHost());
+
+                startActivity(myMenuIntent);
             }
         });
-        signin.setOnClickListener(new View.OnClickListener() {
+        logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getApplicationContext(), "signin button click", Toast.LENGTH_SHORT).show();
-                Intent signinIntent = new Intent(getApplicationContext(), JoinActivity.class);
-                startActivity(signinIntent);
+                Toast.makeText(getApplicationContext(), "logout button click", Toast.LENGTH_SHORT).show();
+                Intent LogoutIntent = new Intent(getApplicationContext(), MainActivity.class);
+                startActivity(LogoutIntent);
+            }
+        });
+        search.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(getApplicationContext(), "search button click", Toast.LENGTH_SHORT).show();
+                Intent searchIntent = new Intent(getApplicationContext(), SearchActivity.class);
+                searchIntent.putExtra( "UserId", userData.getUserId());
+                searchIntent.putExtra( "UserPwd", userData.getUserPassword());
+                searchIntent.putExtra( "UserName", userData.getUserName());
+                searchIntent.putExtra( "UserNum", userData.getUserNum());
+                searchIntent.putExtra( "UserEmail", userData.getUserEmail());
+                searchIntent.putExtra( "UserPhoneNum", userData.getUserPhoneNum());
+                searchIntent.putExtra( "Host", userData.getHost());
+                startActivity(searchIntent);
             }
         });
     }
@@ -89,7 +116,7 @@ public class MainActivity extends AppCompatActivity {
         }
         return super.onCreateOptionsMenu(menu);
     }
-//이미지 업로드 (이걸 함수에 넣을 수 있을까??)
+    //이미지 업로드 (이걸 함수에 넣을 수 있을까??)
     public void sendImageRequest(ImageView imageView, String url){
         ImageLoadControl task = new ImageLoadControl(url, imageView);
         task.execute();

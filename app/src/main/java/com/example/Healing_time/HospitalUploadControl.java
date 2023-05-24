@@ -22,8 +22,8 @@ public class HospitalUploadControl extends AsyncTask<String, Void, String> {
         String hospitalAddress = (String) params[3];
         String hospitalPhone = (String) params[4];
         String hospitalKakao = (String) params[5];
-        String hospitalTime = (String) params[7];
-        String hospitalExtra = (String) params[8];
+        String hospitalTime = (String) params[6];
+        String hospitalExtra = (String) params[7];
 
         String serverURL = (String) params[0];
         //hospitalName, hospitalAddress, hospitalPhone,hospitalKakao, accountNum, hospitalTime, hospitalCost, hospitalExtra);

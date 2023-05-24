@@ -57,7 +57,7 @@ public class HospitalInformationHostActivity extends AppCompatActivity {
                         //imageView = findViewById(R.id.image_addphoto);
                         System.out.print(HospitalData.getHospitalNum());
                         //이미지 로드
-                        sendImageRequest(imageView, "http://117.16.46.95:8080/"+ HospitalData.getImagepath());
+                        //sendImageRequest(imageView, "http://117.16.46.95:8080/"+ HospitalData.getImagepath());
                         HospitalName = (TextView)findViewById(R.id.HospitalName);
                         HospitalName.setText(HospitalData.getHospitalName());
                         HospitalAddress = (TextView)findViewById(R.id.HospitalAddress);

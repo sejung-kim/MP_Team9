@@ -25,10 +25,8 @@ public class hospitalInformationEditActivity extends AppCompatActivity {
     private EditText editText_hospitalAddress;
     private EditText editText_hospitalPhone;
     private EditText editText_hospitalKakao;
-    private EditText editText_AccountNum;
     private EditText editText_hospitalTime;
     private EditText editText_hospitalExtra;
-    private EditText editText_hospitalCost;
     private static String reservation = "/HospitalEdit.php";
 
     @Override
@@ -65,12 +63,8 @@ public class hospitalInformationEditActivity extends AppCompatActivity {
         editText_hospitalPhone.setText(hospitalData.getHospitalPhone());
         editText_hospitalKakao = (EditText)findViewById(R.id.editText_HospitalKakao);
         editText_hospitalKakao.setText(hospitalData.getHospitalKakao());
-        editText_AccountNum = (EditText)findViewById(R.id.editText_AccountNum);
-        editText_AccountNum.setText(hospitalData.getAccountNum());
         editText_hospitalTime = (EditText)findViewById(R.id.editText_HospitalTime);
         editText_hospitalTime.setText(hospitalData.gethospitalTime());
-        editText_hospitalCost = (EditText)findViewById(R.id.editText_HospitalCost);
-        editText_hospitalCost.setText(hospitalData.getHospitalCost());
         editText_hospitalExtra = (EditText)findViewById(R.id.editText_HospitalExtra);
         editText_hospitalExtra.setText(hospitalData.getHospitalExtra());
 

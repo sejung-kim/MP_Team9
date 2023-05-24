@@ -14,7 +14,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
+public class HostActivity extends AppCompatActivity {
 
     ViewPager viewPager;
     ImageView imageView;
@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_host);
 
         ActionBar ab = getSupportActionBar();
         //ab.setTitle("ActionBar Title by setTitle()");
@@ -49,23 +49,47 @@ public class MainActivity extends AppCompatActivity {
         Test = userData.getHost();
         System.out.println(Test);
 
-        Button login = findViewById(R.id.btn_login);
-        Button signin = findViewById(R.id.btn_signin);
+        Button mypage = findViewById(R.id.btn_myPage_host);
+        Button logout = findViewById(R.id.btn_logout);
+        Button list = findViewById(R.id.btn_list_host);
 
-        login.setOnClickListener(new View.OnClickListener() {
+
+        mypage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getApplicationContext(), "login button click", Toast.LENGTH_SHORT).show();
-                Intent loginIntent = new Intent(getApplicationContext(), LoginActivity.class);
-                startActivity(loginIntent);
+                Toast.makeText(getApplicationContext(), "myPage button click", Toast.LENGTH_SHORT).show();
+                Intent myPageHostIntent = new Intent(getApplicationContext(), MyPageHostActivity.class);
+                myPageHostIntent.putExtra( "UserId", userData.getUserId());
+                myPageHostIntent.putExtra( "UserPwd", userData.getUserPassword());
+                myPageHostIntent.putExtra( "UserNum", userData.getUserNum());
+                myPageHostIntent.putExtra( "UserName", userData.getUserName());
+                myPageHostIntent.putExtra( "UserEmail", userData.getUserEmail());
+                myPageHostIntent.putExtra( "UserPhoneNum", userData.getUserPhoneNum());
+                myPageHostIntent.putExtra( "Host", userData.getHost());
+                startActivity(myPageHostIntent);
             }
         });
-        signin.setOnClickListener(new View.OnClickListener() {
+        logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getApplicationContext(), "signin button click", Toast.LENGTH_SHORT).show();
-                Intent signinIntent = new Intent(getApplicationContext(), JoinActivity.class);
-                startActivity(signinIntent);
+                Toast.makeText(getApplicationContext(), "logout button click", Toast.LENGTH_SHORT).show();
+                Intent LogoutIntent = new Intent(getApplicationContext(), MainActivity.class);
+                startActivity(LogoutIntent);
+            }
+        });
+        list.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(getApplicationContext(), "list button click", Toast.LENGTH_SHORT).show();
+                Intent ListIntent = new Intent(getApplicationContext(), HospitalListActivity.class);
+                ListIntent.putExtra( "UserId", userData.getUserId());
+                ListIntent.putExtra( "UserPwd", userData.getUserPassword());
+                ListIntent.putExtra( "UserNum", userData.getUserNum());
+                ListIntent.putExtra( "UserName", userData.getUserName());
+                ListIntent.putExtra( "UserEmail", userData.getUserEmail());
+                ListIntent.putExtra( "UserPhoneNum", userData.getUserPhoneNum());
+                ListIntent.putExtra( "Host", userData.getHost());
+                startActivity(ListIntent);
             }
         });
     }
@@ -89,7 +113,7 @@ public class MainActivity extends AppCompatActivity {
         }
         return super.onCreateOptionsMenu(menu);
     }
-//이미지 업로드 (이걸 함수에 넣을 수 있을까??)
+    //이미지 업로드 (이걸 함수에 넣을 수 있을까??)
     public void sendImageRequest(ImageView imageView, String url){
         ImageLoadControl task = new ImageLoadControl(url, imageView);
         task.execute();
