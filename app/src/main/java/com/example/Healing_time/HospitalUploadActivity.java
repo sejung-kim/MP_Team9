@@ -134,7 +134,7 @@ public class HospitalUploadActivity extends AppCompatActivity {
         System.out.println(userData.getUserNum());
         task.execute("http://" + IP_ADDRESS + HospitalUpload, userData.getUserNum(),hospitalName, hospitalAddress, hospitalPhone,hospitalKakao, hospitalTime, hospitalExtra);
         //uploadImage();
-        Intent intent = new Intent(HospitalUploadActivity.this, HospitalInformationHostActivity.class);
+        Intent intent = new Intent(HospitalUploadActivity.this, HospitalListActivity.class);
         startActivity(intent);
     }
 }
