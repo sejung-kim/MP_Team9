@@ -65,17 +65,23 @@ public class ReserveCompleteActivity extends AppCompatActivity {
                     if (success) {
 
                         reservationData.putReservationData(jsonObject);
+                        reservationData.putdate("5.22 3:00");
+                        reservationData.putHospitalExtraUse("두통, 인후통");
 
                         date = (TextView)findViewById(R.id.date);
                         date.setText(reservationData.getDate());
+
                         UserName = (TextView)findViewById(R.id.UserName);
                         UserName.setText(reservationData.getUserName());
+
                         HospitalExtraUse = (TextView)findViewById(R.id.hospitalExtraUse);
                         HospitalExtraUse.setText(reservationData.gethospitalExtraUse());
+
                         HospitalName = (TextView)findViewById(R.id.HospitalName);
-                        HospitalName.setText(reservationData.gethospitalName());
+                        HospitalName.setText(HospitalData.getHospitalName());
+
                         HospitalAddress = (TextView)findViewById(R.id.HospitalAddress);
-                        HospitalAddress.setText(reservationData.getHospitalAddress());
+                        HospitalAddress.setText(HospitalData.getHospitalAddress());
 
                     }
 

@@ -176,7 +176,6 @@ class ReservationData {
     String HospitalAddress;
     String HospitalExtraUse;
     String HospitalKakao;
-    String Accept;
 
     public ReservationData putReservationData(JSONObject jsonObject){
         try{
@@ -192,8 +191,6 @@ class ReservationData {
             HospitalAddress = jsonObject.getString("hospitalAddress");
             HospitalExtraUse = jsonObject.getString("hospitalExtraUse");
             HospitalKakao = jsonObject.getString("hospitalKakao");
-            Accept = jsonObject.getString("accept");
-
         }catch (JSONException e){
             e.printStackTrace();
         }
@@ -204,8 +201,7 @@ class ReservationData {
     public void putReservationNum(String RNum) {ReservationNum = RNum;}
     public void putUserNum(String UNum){UserNum = UNum;}
     public void putUserName(String UName){UserName = UName;}
-    public void putHospitalNum(String CNum){
-        HospitalNum = CNum;}
+    public void putHospitalNum(String CNum){ HospitalNum = CNum;}
     public void putHostNum(String HName){HostNum = HName;}
     public void putHostPhoneNum(String HPhone){HostPhoneNum = HPhone;}
     public void putUserPhoneNum(String UPhone){UserPhoneNum = UPhone;}
@@ -217,7 +213,6 @@ class ReservationData {
     public void putHospitalExtraUse(String CUse){
         HospitalExtraUse = CUse;}
     public void putHospitalKakao(String CKakao){ HospitalKakao = CKakao;}
-    public void putAccept(String CAccept){Accept = CAccept;}
 
     public String getReservationNum() {
         return ReservationNum;
@@ -266,5 +261,4 @@ class ReservationData {
 
     public String getHospitalKakao() { return HospitalKakao; }
 
-    public String getAccept() {return Accept;}
 }
