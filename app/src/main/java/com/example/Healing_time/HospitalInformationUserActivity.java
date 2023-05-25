@@ -22,10 +22,8 @@ public class HospitalInformationUserActivity extends AppCompatActivity {
     TextView HospitalAddress;
     TextView HospitalPhone;
     TextView HospitalKakao;
-    TextView AccountNum;
     TextView HospitalTime;
     TextView HospitalExtra;
-    TextView HospitalCost;
     hospitalUploadData HospitalData = new hospitalUploadData();
     UserData userData = new UserData();
 
@@ -69,13 +67,10 @@ public class HospitalInformationUserActivity extends AppCompatActivity {
                         HospitalPhone.setText(HospitalData.getHospitalPhone());
                         HospitalKakao = (TextView)findViewById(R.id.HospitalKakao);
                         HospitalKakao.setText(HospitalData.getHospitalKakao());
-                        AccountNum = (TextView)findViewById(R.id.AccountNum);
-                        AccountNum.setText(HospitalData.getAccountNum());
                         HospitalTime = (TextView)findViewById(R.id.HospitalTime);
                         HospitalTime.setText(HospitalData.gethospitalTime());
                         HospitalExtra = (TextView)findViewById(R.id.HospitalExtra);
                         HospitalExtra.setText(HospitalData.getHospitalExtra());
-                        HospitalCost.setText(HospitalData.getHospitalCost());
 
                     }
 
@@ -103,10 +98,8 @@ public class HospitalInformationUserActivity extends AppCompatActivity {
         intent.putExtra("HospitalAddress", HospitalData.getHospitalAddress());
         intent.putExtra("HospitalPhone", HospitalData.getHospitalPhone());
         intent.putExtra("HospitalKakao", HospitalData.getHospitalKakao());
-        intent.putExtra("AccountNum", HospitalData.getAccountNum());
         intent.putExtra("HospitalTime", HospitalData.gethospitalTime());
         intent.putExtra("HospitalExtra", HospitalData.getHospitalExtra());
-        intent.putExtra("HospitalCost", HospitalData.getHospitalCost());
         intent.putExtra( "UserNum", userData.getUserNum());
         intent.putExtra( "UserName", userData.getUserName());
         intent.putExtra( "UserId", userData.getUserId());

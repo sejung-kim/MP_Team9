@@ -83,23 +83,17 @@ public class SearchActivity extends AppCompatActivity {
         });
 
         // 검색에 사용할 데이터을 미리 저장한다.
-        adapter.addItem(ContextCompat.getDrawable(this, R.drawable.hospital1),
-                "Sam Smith", "I'm not the only one.\r\nStay with me.\r\n"); ;
+        adapter.addItem(null, "Sam Smith", "I'm not the only one.\r\nStay with me.\r\n"); ;
 
-        adapter.addItem(ContextCompat.getDrawable(this, R.drawable.hospital2),
-                "Bryan Adams", "heaven.\r\nI do it for you.") ;
+        adapter.addItem(null, "Bryan Adams", "heaven.\r\nI do it for you.") ;
 
-        adapter.addItem(ContextCompat.getDrawable(this, R.drawable.hospital3),
-                "Eric Clapton", "Tears in heaven.\r\nChange the world.") ;
+        adapter.addItem(null, "Eric Clapton", "Tears in heaven.\r\nChange the world.") ;
 
-        adapter.addItem(ContextCompat.getDrawable(this, R.drawable.hospital3),
-                "Gary Moore", "Still got the blues.\r\nOne day.") ;
+        adapter.addItem(null, "Gary Moore", "Still got the blues.\r\nOne day.") ;
 
-        adapter.addItem(ContextCompat.getDrawable(this, R.drawable.hospital4),
-                "Helloween", "A tale that wasn't right.\r\nI want out.") ;
+        adapter.addItem(null, "Helloween", "A tale that wasn't right.\r\nI want out.") ;
 
-        adapter.addItem(ContextCompat.getDrawable(this, R.drawable.hospital1),
-                "Adele", "Hello.\r\nSomeone like you.") ;
+        adapter.addItem(null, "Adele", "Hello.\r\nSomeone like you.") ;
 
     }
 

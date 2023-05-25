@@ -52,7 +52,7 @@ public class FindIdActivity extends AppCompatActivity {
 
             }else{
                 //알림 건축가 객체 생성
-                builder= new NotificationCompat.Builder(this, null);
+                //builder = new NotificationCompat.Builder(this, null);
             }
 
             builder.setSmallIcon(android.R.drawable.ic_menu_view);
