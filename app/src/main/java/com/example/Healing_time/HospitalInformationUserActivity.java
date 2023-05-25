@@ -58,7 +58,6 @@ public class HospitalInformationUserActivity extends AppCompatActivity {
                         //imageView = findViewById(R.id.image_addphoto);
                         System.out.print(HospitalData.getHospitalNum());
                         //이미지 업로드
-                        sendImageRequest(imageView, "http://humming1106.dothome.co.kr/"+ HospitalData.getImagepath());
                         HospitalName = (TextView)findViewById(R.id.HospitalName);
                         HospitalName.setText(HospitalData.getHospitalName());
                         HospitalAddress = (TextView)findViewById(R.id.HospitalAddress);

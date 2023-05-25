@@ -22,17 +22,15 @@ public class hospitalInformationEditControl extends AsyncTask<String, Void, Stri
         String HospitalAddress = (String) params[3];
         String HospitalPhone = (String) params[4];
         String HospitalKakao = (String) params[5];
-        String accountNum = (String) params[6];
-        String HospitalTime = (String) params[7];
-        String HospitalCost = (String) params[8];
-        String HospitalExtra = (String) params[9];
+        String HospitalTime = (String) params[6];
+        String HospitalExtra = (String) params[7];
 
         String serverURL = (String) params[0];
 
 
         //host num 추가해야함
         String postParameters = "hospitalnum=" + HospitalNum + "&hospitalname=" + HospitalName +"&hospitaladdress=" + HospitalAddress + "&hospitalphone=" + HospitalPhone +
-                "&hospitalkakao=" + HospitalKakao + "&accountnum="+ accountNum + "&hospitaltime="+ HospitalTime + "&hospitalcost="+ HospitalCost + "&hospitalextra="+HospitalExtra;
+                "&hospitalkakao=" + HospitalKakao + "&hospitaltime="+ HospitalTime + "&hospitalextra="+HospitalExtra;
         System.out.println(postParameters);
         try {
 

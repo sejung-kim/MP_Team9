@@ -88,7 +88,6 @@ public class HospitalListActivity extends AppCompatActivity {
 
                         System.out.print(HospitalData.getHospitalNum());
                         //이미지 로드
-                        sendImageRequest(imageView, "http://humming1106.dothome.co.kr/"+ HospitalData.getImagepath());
                         HospitalName = (TextView)findViewById(R.id.HospitalName);
                         HospitalName.setText(HospitalData.getHospitalName());
                         HospitalAddress = (TextView)findViewById(R.id.HospitalAddress);
@@ -106,7 +105,6 @@ public class HospitalListActivity extends AppCompatActivity {
         queue.add(hospitalRequest);
 
         adapter.addItem(null, "행복병원", "[진료 과목] 소아청소년과, 내과, 이비인후과, 피부과, 안과\r\n경기도 성남시 분당구 운중로 140");
-
     }
     public void sendImageRequest(ImageView imageView, String url) {
         ImageLoadControl task = new ImageLoadControl(url, imageView);
