@@ -54,7 +54,6 @@ public class ListViewControl extends BaseAdapter implements Filterable {
         }
 
         // 화면에 표시될 View(Layout이 inflate된)으로부터 위젯에 대한 참조 획득
-        ImageView iconImageView = (ImageView) convertView.findViewById(R.id.image_search) ;
         TextView titleTextView = (TextView) convertView.findViewById(R.id.HospitalName) ;
         TextView descTextView = (TextView) convertView.findViewById(R.id.HospitalAddress) ;
 
@@ -62,7 +61,6 @@ public class ListViewControl extends BaseAdapter implements Filterable {
         ListViewData listViewItem = filteredItemList.get(position);
 
         // 아이템 내 각 위젯에 데이터 반영
-        iconImageView.setImageDrawable(listViewItem.getIcon());
         titleTextView.setText(listViewItem.getTitle());
         descTextView.setText(listViewItem.getDesc());
 
