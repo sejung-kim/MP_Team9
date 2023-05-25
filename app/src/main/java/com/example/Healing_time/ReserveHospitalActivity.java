@@ -14,7 +14,7 @@ public class ReserveHospitalActivity extends AppCompatActivity {
     private static String reservation = "/reservationDataInsert.php";
 
     private static final int REQUEST_CODE = 21;
-    TextView HospitalName, HospitalCost;
+    TextView HospitalName;
     EditText editText_date, editText_HospitalExtraUse;
     hospitalUploadData HospitalData = new hospitalUploadData();
     UserData userData = new UserData();
@@ -32,10 +32,8 @@ public class ReserveHospitalActivity extends AppCompatActivity {
         HospitalData.putHospitalAddress(intent.getStringExtra("HospitalAddress"));
         HospitalData.putHospitalPhone(intent.getStringExtra("HospitalPhone"));
         HospitalData.putHospitalKakao(intent.getStringExtra("HospitalKakao"));
-        HospitalData.putAccountNum(intent.getStringExtra("AccountNum"));
         HospitalData.putHospitalTime(intent.getStringExtra("HospitalTime"));
         HospitalData.putHospitalExtra(intent.getStringExtra("HospitalExtra"));
-        HospitalData.putHospitalCost(intent.getStringExtra("HospitalCost"));
         userData.putUserId(intent.getStringExtra("UserId"));
         userData.putUserPassword(intent.getStringExtra("UserPwd"));
         userData.putUserNum(intent.getStringExtra("UserNum"));
@@ -49,8 +47,6 @@ public class ReserveHospitalActivity extends AppCompatActivity {
 
         HospitalName = (TextView)findViewById(R.id.HospitalName);
         HospitalName.setText(HospitalData.getHospitalName());
-        HospitalCost = (TextView)findViewById(R.id.HospitalCost);
-        HospitalCost.setText(HospitalData.getHospitalCost());
 
     }
 
@@ -59,10 +55,10 @@ public class ReserveHospitalActivity extends AppCompatActivity {
         String HospitalExtra = editText_HospitalExtraUse.getText().toString();
 
         System.out.println("유저 네임: "+userData.getUserName());
-        System.out.println("액티비티 보내짐 "+ userData.getUserNum() + userData.getUserName()+  HospitalData.getHospitalNum()+  HospitalData.getHostNum() + HospitalData.getHospitalPhone()+  userData.getUserPhoneNum() + HospitalData.getHospitalName()+  date+ HospitalData.getHospitalAddress()+  HospitalData.getAccountNum()+  HospitalExtra+ HospitalData.getHospitalCost()+ HospitalData.getHospitalKakao());
+        System.out.println("액티비티 보내짐 "+ userData.getUserNum() + userData.getUserName()+  HospitalData.getHospitalNum()+  HospitalData.getHostNum() + HospitalData.getHospitalPhone()+  userData.getUserPhoneNum() + HospitalData.getHospitalName()+  date+ HospitalData.getHospitalAddress()+  HospitalExtra+ HospitalData.getHospitalKakao());
         ReserveHospitalControl task = new ReserveHospitalControl();
         //InsertDataControl task = new InsertDataControl();
-        task.execute("http://" + IP_ADDRESS + reservation, userData.getUserNum(),userData.getUserName(), HospitalData.getHospitalNum(), HospitalData.getHostNum(), HospitalData.getHospitalPhone(), userData.getUserPhoneNum(), HospitalData.getHospitalName(), date, HospitalData.getHospitalAddress(), HospitalData.getAccountNum(), HospitalExtra, HospitalData.getHospitalCost(), HospitalData.getHospitalKakao());
+        task.execute("http://" + IP_ADDRESS + reservation, userData.getUserNum(),userData.getUserName(), HospitalData.getHospitalNum(), HospitalData.getHostNum(), HospitalData.getHospitalPhone(), userData.getUserPhoneNum(), HospitalData.getHospitalName(), date, HospitalData.getHospitalAddress(), HospitalExtra, HospitalData.getHospitalKakao());
         Intent intent = new Intent(ReserveHospitalActivity.this, ReserveCompleteActivity.class);
         intent.putExtra("HospitalNum", HospitalData.getHospitalNum());
         intent.putExtra("HostNum", HospitalData.getHostNum());
@@ -70,10 +66,8 @@ public class ReserveHospitalActivity extends AppCompatActivity {
         intent.putExtra("HospitalAddress", HospitalData.getHospitalAddress());
         intent.putExtra("HospitalPhone", HospitalData.getHospitalPhone());
         intent.putExtra("HospitalKakao", HospitalData.getHospitalKakao());
-        intent.putExtra("AccountNum", HospitalData.getAccountNum());
         intent.putExtra("HospitalTime", HospitalData.gethospitalTime());
         intent.putExtra("HospitalExtra", HospitalData.getHospitalExtra());
-        intent.putExtra("HospitalCost", HospitalData.getHospitalCost());
         intent.putExtra( "UserNum", userData.getUserNum());
         intent.putExtra( "UserName", userData.getUserName());
         intent.putExtra( "UserId", userData.getUserId());

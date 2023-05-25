@@ -26,10 +26,8 @@ public class ReserveHospitalControl extends AsyncTask<String, Void, String> {
         String hospitalName = (String) params[7];
         String Date = (String) params[8];
         String hospitalAddress = (String) params[9];
-        String accountNum = (String) params[10];
-        String hospitalExtraUse = (String) params[11];
-        String hospitalCost = (String) params[12];
-        String Kakao = (String) params[13];
+        String hospitalExtraUse = (String) params[10];
+        String Kakao = (String) params[11];
 
 
         String serverURL = (String) params[0];
@@ -38,8 +36,7 @@ public class ReserveHospitalControl extends AsyncTask<String, Void, String> {
         //host num 추가해야함
         String postParameters = "usernum=" + userNum + "&username=" + userName + "&hospitalnum=" +
                 hospitalNum + "&hostnum=" + hostNum + "&hostphonenum=" + hostPhoneNum + "&userphonenum=" +
-                userPhoneNum + "&hospitalname=" + hospitalName + "&date=" + Date+ "&hospitaladdress=" + hospitalAddress+ "&accountnum=" +
-                accountNum+ "&hospitalextrause=" + hospitalExtraUse+ "&hospitalcost="+ hospitalCost +"&kakao="+ Kakao;
+                userPhoneNum + "&hospitalname=" + hospitalName + "&date=" + Date+ "&hospitaladdress=" + hospitalAddress+ "&hospitalextrause=" + hospitalExtraUse +"&kakao="+ Kakao;
 
         try {
 

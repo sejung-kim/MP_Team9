@@ -22,8 +22,6 @@ public class ReserveCompleteActivity extends AppCompatActivity {
     TextView UserName;
     TextView HospitalExtraUse;
     TextView HospitalName;
-    TextView HospitalCost;
-    TextView AccountNum;
     TextView HospitalAddress;
 
     Button button_ok;
@@ -43,10 +41,8 @@ public class ReserveCompleteActivity extends AppCompatActivity {
         HospitalData.putHospitalAddress(intent.getStringExtra("HospitalAddress"));
         HospitalData.putHospitalPhone(intent.getStringExtra("HospitalPhone"));
         HospitalData.putHospitalKakao(intent.getStringExtra("HospitalKakao"));
-        HospitalData.putAccountNum(intent.getStringExtra("AccountNum"));
         HospitalData.putHospitalTime(intent.getStringExtra("HospitalTime"));
         HospitalData.putHospitalExtra(intent.getStringExtra("HospitalExtra"));
-        HospitalData.putHospitalCost(intent.getStringExtra("HospitalCost"));
         userData.putUserId(intent.getStringExtra("UserId"));
         userData.putUserPassword(intent.getStringExtra("UserPwd"));
         userData.putUserNum(intent.getStringExtra("UserNum"));
@@ -55,7 +51,7 @@ public class ReserveCompleteActivity extends AppCompatActivity {
         userData.putUserPhoneNum(intent.getStringExtra("UserPhoneNum"));
         userData.putAdmin(intent.getStringExtra("Host"));
 
-        System.out.println("액티비티 보내짐 "+ userData.getUserNum() + userData.getUserName()+  HospitalData.getHospitalNum()+  HospitalData.getHostNum() + HospitalData.getHospitalPhone()+  userData.getUserPhoneNum() + HospitalData.getHospitalName()+  HospitalData.getHospitalAddress()+  HospitalData.getAccountNum()+  HospitalData.getHospitalCost()+ HospitalData.getHospitalKakao());
+        System.out.println("액티비티 보내짐 "+ userData.getUserNum() + userData.getUserName()+  HospitalData.getHospitalNum()+  HospitalData.getHostNum() + HospitalData.getHospitalPhone()+  userData.getUserPhoneNum() + HospitalData.getHospitalName()+  HospitalData.getHospitalAddress()+ HospitalData.getHospitalKakao());
 
 
         Response.Listener<String> responseListener = new Response.Listener<String>() {
@@ -80,11 +76,6 @@ public class ReserveCompleteActivity extends AppCompatActivity {
                         HospitalName.setText(reservationData.gethospitalName());
                         HospitalAddress = (TextView)findViewById(R.id.HospitalAddress);
                         HospitalAddress.setText(reservationData.getHospitalAddress());
-                        HospitalCost = (TextView)findViewById(R.id.HospitalCost);
-                        HospitalCost.setText(reservationData.gethospitalCost());
-                        AccountNum = (TextView)findViewById(R.id.AccountNum);
-                        AccountNum.setText(reservationData.getAccountNum());
-
 
                     }
 
@@ -100,7 +91,7 @@ public class ReserveCompleteActivity extends AppCompatActivity {
     }
 
     public void onClick_ok(View view){
-        Intent intent = new Intent(ReserveCompleteActivity.this, MainActivity.class);
+        Intent intent = new Intent(ReserveCompleteActivity.this, UserActivity.class);
         startActivity(intent);
     }
 }

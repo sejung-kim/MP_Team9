@@ -75,7 +75,6 @@ public class HospitalInformationUserActivity extends AppCompatActivity {
                         HospitalTime.setText(HospitalData.gethospitalTime());
                         HospitalExtra = (TextView)findViewById(R.id.HospitalExtra);
                         HospitalExtra.setText(HospitalData.getHospitalExtra());
-                        HospitalCost = (TextView)findViewById(R.id.HospitalCost);
                         HospitalCost.setText(HospitalData.getHospitalCost());
 
                     }
