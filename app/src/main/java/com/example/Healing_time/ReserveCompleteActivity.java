@@ -65,8 +65,6 @@ public class ReserveCompleteActivity extends AppCompatActivity {
                     if (success) {
 
                         reservationData.putReservationData(jsonObject);
-                        reservationData.putdate("5.22 3:00");
-                        reservationData.putHospitalExtraUse("두통, 인후통");
 
                         date = (TextView)findViewById(R.id.date);
                         date.setText(reservationData.getDate());

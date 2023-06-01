@@ -33,9 +33,11 @@
         <activity android:name="com.example.Healing_time.SearchActivity" />
         <activity android:name="com.example.Healing_time.JoinActivity" />
         <activity android:name="com.example.Healing_time.LoginActivity" />
-        <activity android:name="com.example.Healing_time.MainActivity">
+        <activity android:name="com.example.Healing_time.MainActivity"/>
+        <activity android:name="com.example.Healing_time.splash_activity"
+            android:exported="true">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
