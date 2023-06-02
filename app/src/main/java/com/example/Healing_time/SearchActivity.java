@@ -83,17 +83,17 @@ public class SearchActivity extends AppCompatActivity {
         });
 
         // 검색에 사용할 데이터을 미리 저장한다.
-        adapter.addItem(null, "Sam Smith", "I'm not the only one.\r\nStay with me.\r\n"); ;
+        adapter.addItem(null, "행복 병원", "[진료 과목] 소아청소년과, 내과, 이비인후과, 피부과, 안과\r\n경기 성남시 분당구 운중동\r\n"); ;
 
-        adapter.addItem(null, "Bryan Adams", "heaven.\r\nI do it for you.") ;
+        adapter.addItem(null, "연세 소아과", "[진료 과목] 소아청소년과, 예방접종\r\n경기 성남시 분당구 정자동") ;
 
-        adapter.addItem(null, "Eric Clapton", "Tears in heaven.\r\nChange the world.") ;
+        adapter.addItem(null, "성남 치과", "[진료 과목] 치과\r\n경기 성남시 분당구 서현동") ;
 
-        adapter.addItem(null, "Gary Moore", "Still got the blues.\r\nOne day.") ;
+        adapter.addItem(null, "바른 병원", "[진료 과목] 내과, 이비인후과\r\n경기 성남시 수정구 장곡동") ;
 
-        adapter.addItem(null, "Helloween", "A tale that wasn't right.\r\nI want out.") ;
+        adapter.addItem(null, "다솜 의원", "[진료 과목] 내과, 소아청소년과, 신경외과, 외과, 정형외과\r\n경기 성남시 수정구 태평동") ;
 
-        adapter.addItem(null, "Adele", "Hello.\r\nSomeone like you.") ;
+        adapter.addItem(null, "마이엠 치과 의원", "[진료 과목] 치과\r\n성남 수정구 복정동") ;
 
     }
 

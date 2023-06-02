@@ -16,7 +16,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 public class HospitalInformationUserActivity extends AppCompatActivity {
-    //사용자가 검색해서 나온 캠핑장 상세 정보
+    //사용자가 검색해서 나온 병원 상세 정보
     ImageView imageView;
     TextView HospitalName;
     TextView HospitalAddress;
